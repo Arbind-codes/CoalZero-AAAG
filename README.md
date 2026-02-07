@@ -1,4 +1,5 @@
 # 🌱 CoalZero: Measuring Today, Planning Net-Zero
+Data-driven platform to measure coal mine emissions and simulate pathways to carbon neutrality
 
 ## Overview
 CoalZero is a web-based carbon footprint and carbon neutrality planning tool designed specifically for coal mining operations in India.
@@ -118,7 +119,7 @@ CoalZero-AAAG/
 This project is developed for educational and hackathon purposes.
 
 ## Contact
-For queries, reach out to the development team.
-=======
-# CoalZero-AAAG
-Data-driven platform to measure coal mine emissions and simulate pathways to carbon neutrality
+For queries, reach out to the project team (AAAG).
+
+
+
