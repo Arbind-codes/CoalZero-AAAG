@@ -113,7 +113,7 @@ CoalZero-AAAG/
 ## Team
 - **Project Name:** CoalZero
 - **Team Code:** AAAG
-- **Hackathon:** Net-Zero Carbon Planning Challenge
+- **Hackathon:** Electrothon 24Hrs Hackathon organised by EEESOC, BIT Mesra
 
 ## License
 This project is developed for educational and hackathon purposes.
