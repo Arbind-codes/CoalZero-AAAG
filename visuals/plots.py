@@ -55,7 +55,7 @@ def activity_breakdown_chart(diesel_em, electricity_em, excavation_em, transport
     
     labels = ['Diesel', 'Electricity', 'Excavation', 'Transportation']
     values = [diesel_em, electricity_em, excavation_em, transport_em]
-    colors = ['#E74C3C', '#F39C12', '#3498DB', '#9B59B6']
+    colors = ["#FF6161", "#44A7F2", "#F1C40F", "#925DE8"]
     
     # Filter out zero values
     non_zero = [(l, v, c) for l, v, c in zip(labels, values, colors) if v > 0]

@@ -7,8 +7,13 @@ and plan pathways toward carbon neutrality
 import streamlit as st
 import numpy as np
 import pandas as pd
+from datetime import datetime
 
 # Import calculation modules
+from utils.emission_factors import (
+    CARBON_CREDIT_PRICE
+
+)
 from utils.emissions import (
     diesel_emissions,
     electricity_emissions,
@@ -512,6 +517,56 @@ with st.expander("📋 View Detailed Breakdown"):
         'Emissions (tonnes)': '{:.2f}',
         'Percentage': '{:.1f}%'
     }))
+
+
+# ==========================================
+# PDF EXPORT SECTION
+# ==========================================
+
+st.markdown("---")
+
+from utils.pdf_export import generate_pdf_report
+
+# Export button
+col_export1, col_export2, col_export3 = st.columns([1, 1, 1])
+
+with col_export2:
+    if st.button("📄 Export Full Report as PDF", use_container_width=True):
+        # Prepare data for PDF
+        pdf_data = {
+            'total_emissions': total_em_tonnes,
+            'total_sinks': total_absorption_tonnes,
+            'emission_gap': emission_gap_tonnes,
+            'per_capita': per_capita_em,
+            'workers': num_workers,
+            'diesel_litres': diesel_litres,
+            'electricity_kwh': electricity_kwh,
+            'coal_extracted': coal_extracted,
+            'transport_distance': transport_distance,
+            'plantation_area': plantation_area,
+            'num_trees': num_trees,
+            'diesel_emissions': diesel_em,
+            'electricity_emissions': electricity_em,
+            'excavation_emissions': excavation_em,
+            'transport_emissions': transport_em,
+            'total_emissions_kg': total_em,
+            'land_required': land_needed
+        }
+        
+        # Generate PDF
+        with st.spinner('Generating PDF report...'):
+            pdf_bytes = generate_pdf_report(pdf_data)
+        
+        # Provide download button
+        st.download_button(
+            label="⬇️ Download PDF Report",
+            data=pdf_bytes,
+            file_name=f"CoalZero_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf",
+            mime="application/pdf",
+            use_container_width=True
+        )
+        
+        st.success("✅ PDF report generated successfully! Click the download button above.")
 
 
 # ==========================================
