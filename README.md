@@ -113,6 +113,11 @@ CoalZero-AAAG/
 ## Team
 - **Project Name:** CoalZero
 - **Team Code:** AAAG
+- ## 👥 Team Members
+- **Abhijeet Anand**
+- **Adarsh Kumar**
+- **Arbind Kumar**
+- **Gyaan Ranjan**
 - **Hackathon:** Electrothon 24Hrs Hackathon organised by EEESOC, BIT Mesra
 
 ## License
